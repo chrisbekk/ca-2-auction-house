@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap");
+
+@media (min-width: 768px) {
+  .three-d {
+    transform: perspective(5000px) rotateY(var(--rotateX))
+      rotateX(var(--rotateY));
+  }
+}
+
+[data-status="false"] {
+  display: none;
+  color: aqua;
+}
+
+[data-status="true"] {
+  display: block;
+}

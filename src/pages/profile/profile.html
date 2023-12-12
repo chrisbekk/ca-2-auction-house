@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <script src="../src/js/index.js" type="module" defer></script>
+    <title>Document</title>
+  </head>
+  <body
+    class="h-screen text-white bg-main-image bg-center bg-no-repeat bg-cover flex justify-center items-center"
+  >
+    <div
+      id="hero-wrapper"
+      class="flex flex-col bg-black bg-opacity-70 backdrop-blur-lg h-screen md:h-[95vh] w-screen md:w-[95vw] max-w-[1440px] md:rounded-lg three-d"
+    >
+      <header class="p-3 border-b flex items-center justify-between">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+            />
+          </svg>
+          <a href="./index.html" class="hover:text-green-300 transition">
+            <h1>the<span class="font-extrabold"> Auction House</span></h1>
+          </a>
+        </div>
+        <button
+          type="button"
+          id="nav-button"
+          class="py-2 px-3 rounded-lg hover:bg-black hover:bg-opacity-70 md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <nav class="hidden md:block">
+          <ul class="flex">
+            <li class="me-4 p-2">
+              <a href="./index.html" class="hover:text-green-300 transition">
+                Home
+              </a>
+            </li>
+            <li class="me-4 p-2">
+              <a href="./index.html" class="hover:text-green-300 transition">
+                Listings
+              </a>
+            </li>
+            <li class="me-4 p-2 rounded-md">
+              <a href="./index.html" class="hover:text-green-300 transition">
+                Profile
+              </a>
+            </li>
+            <li
+              class="me-4 p-2 rounded-md group hover:bg-violet-500 transition"
+            >
+              <a href="./index.html" class="hover:text-green-300 transition">
+                Login
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav
+          class="z-10 absolute left-0 top-[96px] w-full h-full hidden"
+          id="nav-menu"
+        >
+          <div class="grid grid-cols-2 grid-rows-2 gap-4 h-1/2">
+            <div class="group hover:bg-slate-800 transition">
+              <a
+                href="./index.html"
+                class="h-full w-full flex flex-col justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
+                </svg>
+                <p class="group-hover:text-cyan-400 transition">Home</p>
+              </a>
+            </div>
+            <div class="group hover:bg-slate-800 transition">
+              <a
+                href="./index.html"
+                class="h-full w-full flex flex-col justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 translate"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <p class="group-hover:text-cyan-400 transition">Listings</p>
+              </a>
+            </div>
+            <div class="group hover:bg-slate-800 transition">
+              <a
+                href="./index.html"
+                class="h-full w-full flex flex-col justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 translate"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <p class="group-hover:text-cyan-400 transition">Profile</p>
+              </a>
+            </div>
+            <div class="group hover:bg-slate-800 transition">
+              <a
+                href="./index.html"
+                class="h-full w-full flex flex-col justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 translate"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                  />
+                </svg>
+                <p class="group-hover:text-cyan-400 transition">Login</p>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="h-screen md:flex md:items-center p-3 transition" id="main">
+        <div class="w-100 md:w-1/2 lg:w-1/2">
+          <h1
+            class="text-[40px] md:text-[60px] lg:text-[70px] xl:text-[82px] text-center md:text-start"
+          >
+            Welcome to the Auction House
+          </h1>
+        </div>
+        <div class="w-full md:w-1/2">
+          <form>
+            <label
+              for="search"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >Search</label
+            >
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="search"
+                class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search"
+                required
+              />
+              <button
+                type="submit"
+                class="text-black absolute end-2.5 bottom-2.5 bg-white hover:bg-black hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer class="fixed bottom-0 p-3">FOOTER</footer>
+    </div>
+  </body>
+</html>
