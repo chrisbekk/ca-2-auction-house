@@ -21,24 +21,58 @@ export function listingsCard(listing) {
   const tagsHTML = tags
     .map(
       (tag) =>
-        `<span class="rounded-md bg-teal-500 text-[12px] py-1 px-2 mr-1 max-w-[100px] truncate">${tag}</span>`,
+        `<p class="text-black font-thin text-xs bg-primary-400 p-1 rounded-lg max-w-[100px] truncate>${tag}</p>`,
     )
     .join("");
 
   const card = `
-    <div class="listings-item relative group rounded-lg h-[350px] sm:h-[300px] md:h-[350px] w-full max-w-md mx-auto shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]" id=${id}>
-        <img src=${listingsImage} alt=${title} class="transition opacity-80 group-hover:opacity-100 w-full h-full object-cover rounded-lg">
-        <div class="absolute rounded-br-lg rounded-bl-lg bottom-0 bg-black bg-opacity-50 w-full h-[40%] p-3 text-black shadow-[0px_-10px_7px_1px_#00000024]">
-            <div class="flex mb-4 tags-container">
+      <div id=${id} class="listings-item w-full h-[140px] sm:h-[160px] max-w-[400px] mx-auto flex rounded-md shadow-md hover:cursor-pointer sm:hover:scale-[1.02] transition">
+        <div class="h-full w-[115px] sm:w-[150px] aspect-square">
+          <img src=${listingsImage} alt=${title}
+            class="w-full h-full rounded-l-md"
+          />
+        </div>
+        <div class="p-2 sm:pl-4 ml-1 w-full flex flex-col justify-evenly bg-white bg-opacity-20 rounded-r-md">
+          <div class="flex justify-end">
+            <p class="text-[10px] sm:text-[12px] font-thin">
+              Ends in: <span class="font-normal">${daysLeft} ${
+                daysLeft === 1 ? "day" : "days"
+              }</span>
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-xs sm:text-base tracking-wider sm:w-[200px] text-wrap truncate">
+              ${title}
+            </p>
+            <p class="font-thin text-[10px] sm:text-xs sm:mt-1">
+              USD <span class="font-normal">${latestPrice}</span>
+            </p>
+            <div class="flex gap-1 mt-4 items-center">
                 ${tagsHTML}
             </div>
-            <p class="text-lg font-medium bg-white bg-opacity-80 backdrop-blur-lg rounded-md py-1 pl-2 pr-10 shadow-[1px_-1px_2px_0px_#2d3748] w-48 truncate">${title}</p>
-            <p class="text-md font-bold w-fit px-3 py-1 bg-green-500 absolute bottom-5 right-[-7px] shadow-[1px_-1px_2px_0px_#2d3748] rounded-l-md rounded-r-lg"><span class="font-thin">USD </span>${latestPrice}</p>
-            <p class="absolute w-fit px-3 pl-1 pr-2 ${bgColorDays} text-sm font-normal mt-4"><span class="text-xs font-thin">Ends in: </span>${daysLeft} ${
-              daysLeft === 1 ? "day" : "days"
-            }</p>
+          </div>
         </div>
-    </div>`;
+      </div>
+`;
 
   return card;
+}
+
+{
+  /* <div id=${id} class="flex h-52 w-full md:flex-col md:h-80 md:w-64 bg-white bg-opacity-20 rounded-lg shadow-lg hover:shadow-primary-800 hover:shadow-lg hover:cursor-pointer transition">
+<div class="aspect-auto h-full w-2/5 mr-3 md:aspect-square md:h-1/2 md:w-full">
+  <img src=${listingsImage} alt=${title} class="w-full h-full rounded-l-lg md:rounded-bl-none md:rounded-t-lg"/>
+</div>
+<div class="p-2">
+  <p class="text-sm font-thin">Ends in: <span class="font-normal ml-1">${daysLeft} ${
+    daysLeft === 1 ? "day" : "days"
+  }</span>
+  </p>
+  <p class="sm:text-xl font-thin tracking-wider mt-4 md:mt-2 max-w-[190px] truncate">${title}</p>
+  <p class="font-thin mt-4 md:mt-2">USD <span class="font-normal">${latestPrice}</span></p>
+  <div class="flex mt-8 md:mt-1">
+    ${tagsHTML}
+  </div>
+</div>
+</div> */
 }

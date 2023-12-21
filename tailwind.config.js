@@ -10,6 +10,11 @@ module.exports = {
       backgroundImage: {
         "main-image": "url('../public/assets/bg-main-image.png')",
       },
+      colors: {
+        "primary-400": "#CAA06E",
+        "primary-600": "#BD8A4C",
+        "primary-800": "#3E3932",
+      },
     },
   },
   plugins: [],

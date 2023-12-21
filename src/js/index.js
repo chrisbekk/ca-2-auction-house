@@ -17,9 +17,9 @@ navButton.addEventListener("click", toggleNav);
 const openLoginBtn = document.getElementById("open-login-modal");
 openLoginBtn.addEventListener("click", () => {
   openModal("login-modal");
-  const navMenu = document.getElementById("nav-menu");
-  navMenu.classList.remove("flex");
-  navMenu.classList.add("hidden");
+  // const navMenu = document.getElementById("nav-menu");
+  // navMenu.classList.remove("flex");
+  // navMenu.classList.add("hidden");
   const registerModal = document.getElementById("register-modal");
   if (registerModal.classList.contains("flex")) {
     registerModal.classList.remove("flex");
