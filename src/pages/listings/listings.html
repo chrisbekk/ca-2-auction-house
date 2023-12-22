@@ -58,7 +58,7 @@
           </svg>
         </button>
         <nav
-          class="hidden absolute left-0 top-[72px] w-full h-[350px] bg-black bg-opacity-80 rounded-b-xl z-50 md:block md:static md:bg-transparent md:w-auto md:h-auto"
+          class="hidden absolute left-0 top-28 w-full max-h-[350px] bg-black bg-opacity-80 rounded-b-xl z-50 md:block md:static md:bg-transparent md:w-auto md:h-auto"
           id="nav-menu"
         >
           <ul class="md:flex md:items-center w-full">
@@ -88,10 +88,9 @@
             </li>
             <li
               class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-              data-status="false"
             >
               <a
-                href="../../pages/listings/listings.html"
+                href="../listings/listings.html"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -116,7 +115,7 @@
               data-status="false"
             >
               <a
-                href="../../pages/profile/profile.html"
+                href="../profile/profile.html"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -138,54 +137,13 @@
             </li>
             <li
               class="me-4 pl-6 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+              data-login="true"
             >
               <button
                 type="button"
                 id="open-login-modal"
                 class="border w-11/12 mx-auto my-8 px-2 py-3 rounded-lg flex items-center bg-white text-black hover:bg-black hover:text-white md:bg-transparent md:text-white md:hover:bg-white md:hover:text-black transition md:w-auto"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 group-hover:text-cyan-400 translate"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                  />
-                </svg>
-                <p class="px-4 font-mono">Login</p>
-              </button>
-            </li>
-            <li
-              class="me-4 pl-6 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-              data-logout="false"
-            >
-              <button
-                type="button"
-                id="logout"
-                class="border w-11/12 mx-auto my-8 px-2 py-3 rounded-lg flex items-center bg-white text-black hover:bg-black hover:text-white md:bg-transparent md:text-white md:hover:bg-white md:hover:text-black transition md:w-auto"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 group-hover:text-cyan-400 translate"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                  />
-                </svg>
-                <p class="px-4 font-mono">Logout</p>
-              </button>
+              ></button>
             </li>
           </ul>
         </nav>

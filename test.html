@@ -10,12 +10,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/dist/output.css" />
-    <script src="./index.js" defer type="module"></script>
+    <script src="./src/js/index.js" defer type="module"></script>
     <title>The Auction House | Listings</title>
   </head>
   <body class="flex flex-col min-h-screen gradient-background text-white">
-    <header class="bg-black bg-opacity-20 p-2">
-      <div class="container h-28 mx-auto flex justify-between items-center">
+    <header
+      class="bg-black bg-opacity-60 border-b fixed w-full top-0 z-10 h-28"
+    >
+      <div
+        class="p-4 flex items-center justify-between h-full container mx-auto"
+      >
         <div class="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +94,7 @@
               class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
             >
               <a
-                href="../listings/listings.html"
+                href="./src/pages/listings/listings.html"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -115,7 +119,7 @@
               data-status="false"
             >
               <a
-                href="../profile/profile.html"
+                href="./src/pages/profile/index.js"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -149,76 +153,70 @@
         </nav>
       </div>
     </header>
-    <main
-      class="z-10 p-3 flex-1 lg:grid lg:grid-rows-1 lg:grid-cols-2"
-      id="main"
-    >
-      <section class="mx-auto my-auto" id="media-container">
-        <div class="p-6 max-w-[577px] mx-auto">
-          <div class="aspect-square">
-            <img
-              id="primary-image"
-              src=""
-              class="rounded-lg shadow-md shadow-black w-full h-full object-cover"
+    <main class="flex-1 overflow-y-auto pt-32 pb-32 px-4 container mx-auto">
+      <div class="pt-32 flex flex-col justify-center items-center">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-thin text-center">
+          Welcome to the Auction House
+        </h1>
+        <form class="mt-10 w-full lg:w-3/4 xl:w-1/2">
+          <label
+            for="search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only"
+            >Search
+          </label>
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="search"
+              class="block bg-transparent w-full p-4 ps-10 text-sm text-white border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Search"
+              required
             />
-          </div>
-
-          <div
-            class="grid min-h-[100px] grid-cols-4 p-4 grid-rows-1 gap-3 my-10 bg-white bg-opacity-20 rounded-xl"
-            id="media-grid"
-          ></div>
-        </div>
-      </section>
-      <section class="mx-auto my-auto" id="listings-details">
-        <div class="md:p-6 md:max-w-[577px] mx-auto my-auto">
-          <p class="font-bold text-3xl" id="listing-title">Listing Title</p>
-          <ul class="mt-4 mb-10" id="listing-tags"></ul>
-          <div class="md:flex md:justify-between md:w-[400px] mb-16">
-            <div
-              class="bg-primary-400 mb-8 rounded-xl text-black p-2 pr-4 w-fit relative lg:mb-0"
-            >
-              <p class="text-xs tracking-wider">Current highest bid:</p>
-              <p class="text-xl font-bold" id="listing-highest-bid">
-                <span class="font-thin">USD </span>
-              </p>
-              <p
-                class="bg-black drop-shadow-lg text-white font-medium text-sm rounded-xl px-4 py-2 w-fit absolute -bottom-6 -right-5"
-                id="bids-amount"
-              ></p>
-            </div>
-            <div class="py-2 pl-4 pr-10 w-fit h-[60px] rounded-xl" id="counter">
-              <p class="text-xs text-black tracking-wider">Bidding ends in:</p>
-              <p class="font-bold text-center text-black" id="listing-deadline">
-                7 days, 23 hours
-              </p>
-            </div>
-          </div>
-          <div class="relative mb-10">
-            <div
-              class="rounded-tl-lg rounded-br-lg bg-black w-fit py-2 pl-2 pr-10 absolute top-0 left-0"
-            >
-              <p class="text-xs tracking-wider">Seller:</p>
-              <p class="font-thin text-base" id="listing-seller"></p>
-            </div>
-            <p
-              class="bg-white text-black p-4 tracking-wider leading-relaxed rounded-xl pt-16"
-              id="listing-description"
-            ></p>
-          </div>
-          <div class="flex flex-col items-center">
-            <p
-              class="tracking-wider text-xl text-center mb-6 border-b px-10 pb-3"
-            >
-              Join the Auction
-            </p>
             <button
-              class="px-6 py-3 w-1/2 border text-xl tracking-wider mb-6 transition hover:bg-white hover:text-black hover:rounded-xl"
+              type="button"
+              id="search-button"
+              class="text-xs font-normal text-black font-mono absolute end-2.5 bottom-2.5 bg-white hover:bg-black hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 md:text-sm rounded-lg px-4 py-2"
             >
-              Bid on Listing
+              Search
             </button>
           </div>
-        </div>
-      </section>
+        </form>
+      </div>
+      <div class="mt-16 flex flex-col">
+        <p class="text-sm md:text-base font-thin tracking-wider text-center">
+          Not got a Auction House profile?
+          <strong
+            >Sign up in order to bid on thousands of items, or list your own
+            items.</strong
+          >
+        </p>
+        <button
+          type="button"
+          id="open-register-modal"
+          class="mx-auto mt-8 font-mono border py-2 px-4 rounded-lg hover:bg-white hover:text-black transition"
+        >
+          Register User
+        </button>
+      </div>
     </main>
     <footer class="mt-auto px-2 bg-black bg-opacity-60">
       <div class="container mx-auto h-28">FOOTER</div>

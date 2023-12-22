@@ -10,3 +10,5 @@ export const SINGLELISTING = "/listings";
 export const USERDATA = "/profiles/";
 // API ENDPOINT FOR FETCHING LISTINGS FOR USER
 export const USERLISTINGS = "/profiles/<name>/listings";
+// API ENDPOINT FOR UPDATING PROFILE MEDIA
+export const UPDATE_AVATAR = "/profiles/<name>/media";

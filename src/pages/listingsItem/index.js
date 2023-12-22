@@ -1,7 +1,7 @@
 import { getSingleListing } from "../../js/api/getSingleListing.js";
 import { queryParam } from "../../js/utils/queryParam.js";
 import { imageGallery } from "../../js/components/imageGallery.js";
-
+import { loginButton } from "../../js/components/navBar.js";
 const gallery = [
   "https://st3.depositphotos.com/1064024/14272/i/450/depositphotos_142722813-stock-photo-heart-love-tree.jpg",
   "https://buffer.com/library/content/images/2023/09/instagram-image-size.jpg",
@@ -53,7 +53,7 @@ function createTags(tags) {
           "mr-2",
           "my-2",
           "rounded-xl",
-          "bg-green-300",
+          "bg-primary-400",
           "px-6",
           "py-2",
           "text-black",

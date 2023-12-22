@@ -1,54 +1,235 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../../dist/output.css" />
-    <script src="./index.js" type="module" defer></script>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script src="./index.js" defer type="module"></script>
+    <title>The Auction House | Listings</title>
   </head>
-  <body class="bg-main-image bg-no-repeat bg-center bg-cover text-white">
-    <div
-      class="flex flex-col min-h-screen bg-black bg-opacity-50 backdrop-blur-lg"
+  <body class="flex flex-col min-h-screen gradient-background text-white">
+    <header class="bg-black bg-opacity-20 p-2">
+      <div class="container h-28 mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+            />
+          </svg>
+          <a href="../../../index.html" class="hover:text-green-300 transition">
+            <h1>the<span class="font-extrabold"> Auction House</span></h1>
+          </a>
+        </div>
+        <button
+          type="button"
+          id="nav-button"
+          class="py-2 px-3 rounded-lg hover:bg-black hover:bg-opacity-70 md:hidden"
+          value="Input"
+          role="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <nav
+          class="hidden absolute left-0 top-28 w-full max-h-[350px] bg-black bg-opacity-80 rounded-b-xl z-50 md:block md:static md:bg-transparent md:w-auto md:h-auto"
+          id="nav-menu"
+        >
+          <ul class="md:flex md:items-center w-full">
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+            >
+              <a
+                href="../../../index.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Home</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+            >
+              <a
+                href="../listings/listings.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Listings</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+              data-status="false"
+            >
+              <a
+                href="./profile.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Profile</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+              data-login="true"
+            >
+              <button
+                type="button"
+                id="open-login-modal"
+                class="border w-11/12 mx-auto my-8 px-2 py-3 rounded-lg flex items-center bg-white text-black hover:bg-black hover:text-white md:bg-transparent md:text-white md:hover:bg-white md:hover:text-black transition md:w-auto"
+              ></button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main
+      class="flex-1 overflow-y-auto pt-32 pb-32 px-4 container mx-auto xl:flex xl:justify-evenly"
     >
-      <header
-        class="bg-black bg-opacity-60 border-b fixed w-full top-0 z-10 h-28"
+      <section
+        class="py-2 px-4 flex flex-col items-center sm:flex-row sm:items-start sm:justify-between xl:justify-evenly sm:w-[550px] sm:mx-auto xl:mx-0 xl:mt-12"
       >
         <div
-          class="p-4 flex items-center justify-between h-full container mx-auto"
+          class="aspect-square w-[140px] h-[140px] md:w-[180px] md:h-[180px]"
         >
-          <div class="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 30 30"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-12 h-12"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
-              />
-            </svg>
-            <a
-              href="../../../index.html"
-              class="hover:text-green-300 transition"
-            >
-              <h1>the<span class="font-extrabold"> Auction House</span></h1>
-            </a>
-          </div>
+          <img
+            src=""
+            class="h-full w-full rounded-md shadow-xl sm:mt-6 md:mt-0"
+            id="avatar"
+          />
+        </div>
+        <div class="pt-2 sm:pt-8 flex flex-col items-center sm:block">
+          <p class="text-xl font-light tracking-wider" id="username">
+            Username
+          </p>
+          <p class="font-light tracking-widest" id="email">username@mail.com</p>
+          <p class="font-light text-lg tracking widest mt-2 mb-4" id="credits">
+            Credits: 1000
+          </p>
+          <button
+            class="border bg-white bg-opacity-5 px-3 py-3 text-sm font-light transition hover:bg-primary-400 hover:text-black hover:font-normal hover:rounded-sm"
+            id="open-avatar-modal"
+          >
+            Change Avatar
+          </button>
+        </div>
+      </section>
+      <section
+        class="my-8 sm:w-[550px] sm:mx-auto xl:mx-0 xl:mt-12 flex flex-col"
+      >
+        <button
+          class="border bg-white bg-opacity-5 px-8 py-4 mx-auto mt-10 xl:mt-0 font-light tracking-wider transition hover:bg-primary-400 hover:text-black hover:font-normal hover:rounded-sm"
+          id="open-create-listings-modal"
+        >
+          New Listing
+        </button>
+        <!-- <p class="text-xl font-light tracking-widest">Your Listings</p> -->
+        <div class="grid grid-cols-1 mt-10" id="listings-container">
+          <ul class="grid grid-cols-4 place-items-center border-b pb-2">
+            <li class="font-mono sm:font-bold text-sm sm:text-sm">Created</li>
+            <li class="font-mono sm:font-bold text-sm sm:text-sm">Status</li>
+            <li class="font-mono sm:font-bold text-sm sm:text-sm">Bids</li>
+            <li class="font-mono sm:font-bold text-sm sm:text-sm">Top Bid</li>
+          </ul>
+          <ul class="grid grid-cols-4 place-items-center border-b py-2">
+            <li class="font-mono font-thin text-sm sm:text-sm">Mar 23 2023</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">Ended</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">12</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">USD 130</li>
+          </ul>
+          <ul class="grid grid-cols-4 place-items-center border-b py-2">
+            <li class="font-mono font-thin text-sm sm:text-sm">Nov 12 2023</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">Active</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">2</li>
+            <li class="font-mono font-thin text-sm sm:text-sm">USD 15</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-auto px-2 bg-black bg-opacity-60">
+      <div class="container mx-auto h-28">FOOTER</div>
+    </footer>
+
+    <!-- MODALS -->
+    <div
+      id="avatar-modal"
+      class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center"
+    >
+      <div
+        class="w-full max-w-[440px] sm:mx-auto bg-black bg-opacity-80 p-4 rounded-xl"
+      >
+        <div class="flex justify-end">
           <button
             type="button"
-            id="nav-button"
-            class="py-2 px-3 rounded-lg hover:bg-black hover:bg-opacity-70 md:hidden"
+            role="button"
+            aria-label="close modal"
+            id="avatar-close"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,227 +242,195 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
           </button>
-          <nav
-            class="hidden absolute left-0 top-[72px] w-full h-[350px] bg-black bg-opacity-80 rounded-b-xl z-50 md:block md:static md:bg-transparent md:backdrop-blur-none md:w-auto md:h-auto"
-            id="nav-menu"
-          >
-            <ul class="md:flex md:items-center w-full">
-              <li
-                class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-              >
-                <a
-                  href="../../../index.html"
-                  class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 group-hover:text-cyan-400 transition"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                    />
-                  </svg>
-                  <p class="px-4 md:px-2">Home</p>
-                </a>
-              </li>
-              <li
-                class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-                data-status="false"
-              >
-                <a
-                  href="../../pages/listings/listings.html"
-                  class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 group-hover:text-cyan-400 transition"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                    />
-                  </svg>
-                  <p class="px-4 md:px-2">Listings</p>
-                </a>
-              </li>
-              <li
-                class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-                data-status="false"
-              >
-                <a
-                  href="../../pages/profile/profile.html"
-                  class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 group-hover:text-cyan-400 transition"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <p class="px-4 md:px-2">Profile</p>
-                </a>
-              </li>
-              <li
-                class="me-4 pl-6 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
-              >
-                <button
-                  type="button"
-                  id="open-login-modal"
-                  class="border w-11/12 mx-auto my-8 px-2 py-3 rounded-lg flex items-center bg-white text-black hover:bg-black hover:text-white md:bg-transparent md:text-white md:hover:bg-white md:hover:text-black transition md:w-auto"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 group-hover:text-cyan-400 translate"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                    />
-                  </svg>
-                  <p class="px-4 font-mono">Login</p>
-                </button>
-              </li>
-            </ul>
-          </nav>
         </div>
-      </header>
-      <main
-        class="flex-1 overflow-y-auto pt-32 pb-32 px-4 container mx-auto xl:flex xl:justify-evenly"
-      >
-        <section
-          class="py-2 px-4 flex flex-col items-center sm:flex-row sm:items-start sm:justify-between xl:justify-evenly sm:w-[550px] sm:mx-auto xl:mx-0 xl:mt-12"
-        >
-          <div
-            class="aspect-square w-[140px] h-[140px] md:w-[180px] md:h-[180px]"
-          >
-            <img
-              src=""
-              class="h-full w-full rounded-md shadow-xl sm:mt-6 md:mt-0"
-              id="avatar"
+        <h1>Update your profile picture</h1>
+        <p class="text-red-300 font-thin hidden" id="avatar-error">
+          Something went wrong
+        </p>
+        <form class="p-4">
+          <label for="user-avatar" class="mb-2 text-sm font-medium sr-only"
+            >Avatar
+          </label>
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="user-avatar"
+              class="block bg-white bg-opacity-20 w-full p-4 ps-10 text-sm text-white active:border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Avatar"
             />
-          </div>
-          <div class="pt-2 sm:pt-8 flex flex-col items-center sm:block">
-            <p class="text-xl font-light tracking-wider" id="username">
-              Username
-            </p>
-            <p class="font-light tracking-widest" id="email">
-              username@mail.com
-            </p>
-            <p
-              class="font-light text-lg tracking widest mt-2 mb-4"
-              id="credits"
-            >
-              Credits: 1000
-            </p>
             <button
-              class="border px-3 py-3 font-mono text-sm font-light transition hover:bg-white hover:text-black hover:rounded-sm"
-              id="open-avatar-modal"
+              type="button"
+              id="update-button"
+              class="h-full text-sm transition text-black absolute end-0 bottom-0 bg-primary-400 hover:bg-primary-600 hover:text-white focus:ring-4 focus:outline-none md:text-sm rounded-r-xl px-4 py-2"
             >
-              Change Avatar
+              Update
             </button>
           </div>
-        </section>
-        <section
-          class="my-8 sm:w-[550px] sm:mx-auto xl:mx-0 xl:mt-12 flex flex-col"
-        >
-          <button
-            class="border px-8 py-4 mx-auto mt-10 xl:mt-0 font-mono font-light tracking-wider transition hover:bg-white hover:text-black hover:rounded-sm"
-          >
-            New Listing
-          </button>
-          <!-- <p class="text-xl font-light tracking-widest">Your Listings</p> -->
-          <div class="grid grid-cols-1 mt-10" id="listings-container">
-            <ul class="grid grid-cols-4 place-items-center border-b pb-2">
-              <li class="font-mono sm:font-bold text-sm sm:text-sm">Created</li>
-              <li class="font-mono sm:font-bold text-sm sm:text-sm">Status</li>
-              <li class="font-mono sm:font-bold text-sm sm:text-sm">Bids</li>
-              <li class="font-mono sm:font-bold text-sm sm:text-sm">Top Bid</li>
-            </ul>
-            <ul class="grid grid-cols-4 place-items-center border-b py-2">
-              <li class="font-mono font-thin text-sm sm:text-sm">
-                Mar 23 2023
-              </li>
-              <li class="font-mono font-thin text-sm sm:text-sm">Ended</li>
-              <li class="font-mono font-thin text-sm sm:text-sm">12</li>
-              <li class="font-mono font-thin text-sm sm:text-sm">USD 130</li>
-            </ul>
-            <ul class="grid grid-cols-4 place-items-center border-b py-2">
-              <li class="font-mono font-thin text-sm sm:text-sm">
-                Nov 12 2023
-              </li>
-              <li class="font-mono font-thin text-sm sm:text-sm">Active</li>
-              <li class="font-mono font-thin text-sm sm:text-sm">2</li>
-              <li class="font-mono font-thin text-sm sm:text-sm">USD 15</li>
-            </ul>
-          </div>
-        </section>
-      </main>
-      <footer
-        class="bg-black bg-opacity-60 border-t p-4 absolute w-full bottom-0 h-28"
+        </form>
+      </div>
+    </div>
+    <div
+      class="fixed z-50 inset-0 min-h-screen bg-black bg-opacity-70 hidden justify-center items-center"
+      id="create-listings-modal"
+    >
+      <div
+        class="w-full h-full overflow-y-auto pb-20 max-w-[400px] sm:mx-auto border bg-black bg-opacity-80 p-4 rounded-xl"
       >
-        <div class="container mx-auto p-4 flex justify-between">
-          <div class="flex items-center">
+        <div class="flex justify-end">
+          <button
+            type="button"
+            role="button"
+            aria-label="close modal"
+            id="create-listings-close"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 30 30"
+              viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-12 h-12"
+              class="w-6 h-6"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <a href="./index.html" class="hover:text-green-300 transition">
-              <h1>the<span class="font-extrabold"> Auction House</span></h1>
-            </a>
+          </button>
+        </div>
+        <h1>Create Listing</h1>
+        <p class="text-red-300 font-thin" id="generic-error"></p>
+        <form>
+          <div class="relative mt-8">
+            <label for="title" class="block font-normal tracking-wider"
+              >Title</label
+            >
+            <input
+              type="text"
+              aria-label="Item Title"
+              id="title"
+              class="bg-white bg-opacity-20 p-4 ps-4 text-sm text-white w-full rounded-xl"
+              required
+            />
+            <p class="text-red-300 font-thin" id="title-error"></p>
           </div>
-          <p class="text-sm font-thin">Christian Bekkelund 2023</p>
-        </div>
-      </footer>
-      <div
-        id="avatar-modal"
-        class="fixed inset-0 bg-black bg-opacity-70 justify-center items-center hidden"
-      >
-        <!-- Modal content -->
-        <div
-          class="w-full h-full md:w-[450px] md:h-[550px] bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border border-gray-100 flex flex-col justify-between p-4"
-          id="modal-content"
-        >
-          <p>Modal</p>
-          <button class="border" id="close-avatar-modal">Close</button>
-        </div>
+          <div class="relative mt-8">
+            <label for="description" class="block font-normal tracking-wider"
+              >Description</label
+            >
+            <input
+              type="text"
+              aria-label="Item Description"
+              id="description"
+              class="bg-white bg-opacity-20 p-4 ps-4 text-sm text-white w-full rounded-xl"
+            />
+          </div>
+          <div class="relative mt-8 flex justify-between">
+            <p class="font-thin mb-2">Add item tags:</p>
+            <button
+              id="add-tags-button"
+              type="button"
+              role="button"
+              aria-label="Create item tag"
+              class="py-1 px-3 bg-primary-400 rounded-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-black"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div id="tags-container">
+            <p class="text-red-300 font-thin hidden">Max four tags</p>
+          </div>
+          <div class="relative mt-8 flex justify-between">
+            <p class="font-thin mb-2">Add item pictures:</p>
+            <button
+              id="add-image-button"
+              type="button"
+              role="button"
+              aria-label="Add item image."
+              class="py-1 px-3 bg-primary-400 rounded-xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-black"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div id="image-container">
+            <p class="text-red-300 font-thin hidden">Max five images</p>
+          </div>
+          <div class="relative mt-8 mb-10">
+            <label
+              for="auction-deadline"
+              class="block font-normal tracking-wider mb-1"
+            >
+              Set auction deadline:
+            </label>
+            <input
+              type="datetime-local"
+              id="auction-deadline"
+              name="auction-deadline"
+              aria-label="Deadline auction"
+              class="bg-white bg-opacity-20 text-sm p-2 rounded-xl"
+            />
+            <p class="text-red-300 font-thin" id="date-error"></p>
+          </div>
+
+          <button
+            class="bg-white bg-opacity-20 text-xl font-thin tracking-wider py-4 px-6 rounded-xl"
+            id="submit-listing-button"
+            type="button"
+            role="button"
+            aria-label="List Item"
+          >
+            List item
+          </button>
+        </form>
       </div>
     </div>
   </body>

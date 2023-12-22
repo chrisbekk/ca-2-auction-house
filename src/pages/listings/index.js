@@ -1,7 +1,8 @@
 import { listingsCard } from "../../js/components/listingsCard.js";
 import { getListings } from "../../js/api/getListings.js";
 import { toggleNav } from "../../js/listeners/toggleNav.js";
-import { userState } from "../../js/auth/isAuth.js";
+//import { userState } from "../../js/auth/isAuth.js";
+import { loginButton } from "../../js/components/navBar.js";
 import {
   generatePaginationButtons,
   paginate,
