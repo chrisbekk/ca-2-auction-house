@@ -6,7 +6,7 @@ export async function getUser(username, accessToken) {
         Authorization: `Bearer ${accessToken}`,
       },
     };
-    // Fetch user data
+
     const responseData = await fetch(
       `${BASE_URL}${USERDATA}${username}?_listings=true&_bids=true`,
       options,

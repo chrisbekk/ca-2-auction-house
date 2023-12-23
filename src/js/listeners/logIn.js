@@ -12,7 +12,7 @@ export async function logIn() {
     });
     setItem("user", response);
     localStorage.setItem("token", response.accessToken);
-    window.location.href = "src/pages/profile/profile.html";
+    window.location.href = "/profile.html";
   } catch (error) {
     // Handle Error Messages from server
     console.log(error.data);

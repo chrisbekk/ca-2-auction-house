@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script
+      src="./src/pages/listingsItem/index.js"
+      defer
+      type="module"
+    ></script>
+    <title>The Auction House | Listings</title>
+  </head>
+  <body class="flex flex-col min-h-screen gradient-background text-white">
+    <header class="bg-black bg-opacity-20 p-2">
+      <div class="container h-28 mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-12 h-12"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+            />
+          </svg>
+          <a href="./index.html" class="hover:text-green-300 transition">
+            <h1>the<span class="font-extrabold"> Auction House</span></h1>
+          </a>
+        </div>
+        <button
+          type="button"
+          id="nav-button"
+          class="py-2 px-3 rounded-lg hover:bg-black hover:bg-opacity-70 md:hidden"
+          value="Input"
+          role="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <nav
+          class="hidden absolute left-0 top-28 w-full max-h-[350px] bg-black bg-opacity-80 rounded-b-xl z-50 md:block md:static md:bg-transparent md:w-auto md:h-auto"
+          id="nav-menu"
+        >
+          <ul class="md:flex md:items-center w-full">
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+            >
+              <a
+                href="./index.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Home</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+            >
+              <a
+                href="./listings.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Listings</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+              data-status="false"
+            >
+              <a
+                href="./profile.html"
+                class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 group-hover:text-cyan-400 transition"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <p class="px-4 md:px-2">Profile</p>
+              </a>
+            </li>
+            <li
+              class="me-4 pl-6 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
+              data-login="true"
+            >
+              <button
+                type="button"
+                id="open-login-modal"
+                class="border w-11/12 mx-auto my-8 px-2 py-3 rounded-lg flex items-center bg-white text-black hover:bg-black hover:text-white md:bg-transparent md:text-white md:hover:bg-white md:hover:text-black transition md:w-auto"
+              ></button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main
+      class="z-10 p-3 flex-1 lg:grid lg:grid-rows-1 lg:grid-cols-2"
+      id="main"
+    >
+      <section class="mx-auto my-auto" id="media-container">
+        <div class="p-6 max-w-[577px] mx-auto">
+          <div class="aspect-square">
+            <img
+              id="primary-image"
+              src=""
+              class="rounded-lg shadow-md shadow-black w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="grid min-h-[100px] grid-cols-4 p-4 grid-rows-1 gap-3 my-10 bg-white bg-opacity-20 rounded-xl"
+            id="media-grid"
+          ></div>
+        </div>
+      </section>
+      <section class="mx-auto my-auto" id="listings-details">
+        <div class="md:p-6 sm:max-w-[577px] mx-auto my-auto">
+          <p
+            class="font-thin max-w-2xl break-words tracking-wider text-3xl"
+            id="listing-title"
+          >
+            Listing Title
+          </p>
+          <ul class="mt-4 mb-10" id="listing-tags"></ul>
+          <div class="md:flex md:justify-between md:w-[400px] mb-16">
+            <button
+              type="button"
+              role="button"
+              aria-label="Show all bids"
+              title="Show all bids"
+              class="bg-white bg-opacity-20 rounded-lg mb-8 p-2 pr-4 w-fit relative lg:mb-0 shadow-lg hover:cursor-pointer hover:scale-[102%] hover:bg-primary-400 hover:text-black transition"
+              id="show-bid-details-button"
+            >
+              <p class="text-xs tracking-wider">Current highest bid:</p>
+              <p class="text-xl font-bold" id="listing-highest-bid">
+                <span class="font-thin">USD </span>
+              </p>
+            </button>
+            <div class="py-2 pl-4 pr-10 w-fit h-[60px] rounded-xl" id="counter">
+              <p class="text-xs text-black tracking-wider">Bidding ends in:</p>
+              <p class="font-bold text-center text-black" id="listing-deadline">
+                7 days, 23 hours
+              </p>
+            </div>
+          </div>
+          <div class="relative mb-10">
+            <div
+              class="rounded-tl-lg rounded-br-lg bg-black w-fit py-2 pl-2 pr-10 absolute top-0 left-0"
+            >
+              <p class="text-xs tracking-wider">Seller:</p>
+              <p class="font-thin text-base" id="listing-seller"></p>
+            </div>
+            <p
+              class="p-4 tracking-wider font-thin leading-relaxed rounded-xl pt-16"
+              id="listing-description"
+            ></p>
+          </div>
+          <div class="flex flex-col items-center">
+            <p
+              class="tracking-wider text-xl text-center mb-6 border-b px-10 pb-3"
+            >
+              Join the Auction
+            </p>
+            <button
+              class="px-6 py-3 w-1/2 text-xl tracking-wider bg-white bg-opacity-20 rounded-xl mb-6 transition hover:bg-primary-400 hover:text-black hover:rounded-xl"
+              id="bid-on-listing-button"
+              role="button"
+              type="button"
+              aria-label="Bid on Listing"
+            >
+              Bid on Listing
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-auto px-2 bg-black bg-opacity-60">
+      <div class="container mx-auto h-28">FOOTER</div>
+    </footer>
+    <div
+      class="fixed inset-0 bg-black z-50 bg-opacity-70 hidden justify-center items-center"
+      id="bid-details-modal"
+    >
+      <div class="w-full max-w-xl p-4 rounded-lg bg-black bg-opacity-80">
+        <div class="flex justify-end">
+          <button
+            type="button"
+            role="button"
+            aria-label="close modal"
+            id="close-bid-details-modal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <h1 class="mb-2">Bids history</h1>
+          <div class="p-1">
+            <ul
+              class="grid grid-cols-3 justify-items-center border-b pb-2 mb-2"
+            >
+              <li class="px-4">#</li>
+              <li class="px-4">Bidder</li>
+              <li class="px-4">Amount</li>
+            </ul>
+            <div id="bids-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed inset-0 bg-black z-50 bg-opacity-70 hidden justify-center items-center"
+      id="bid-on-listing-modal"
+    >
+      <div class="w-full max-w-xl p-4 rounded-lg bg-black bg-opacity-80">
+        <div class="flex justify-end">
+          <button
+            type="button"
+            role="button"
+            aria-label="close modal"
+            id="close-bid-on-listing-modal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <h1>Bid on listing</h1>
+          <p class="text-red-300 font-thin hidden" id="generic-error">
+            Wooops. Something went wrong. Please try again
+          </p>
+        </div>
+        <form class="p-2 sm:1/3">
+          <div class="relative mt-8">
+            <div class="my-2">
+              <p class="font-thin text-lg">
+                Your credit: USD
+                <span class="font-normal" id="user-credit"></span>
+              </p>
+              <p
+                class="bg-primary-400 my-2 py-1 px-2 rounded-md w-fit text-black"
+              >
+                Bid to beat: USD
+                <span class="font-normal" id="bid-to-beat"></span>
+              </p>
+            </div>
+            <p class="text-red-300 font-thin hidden" id="amount-error">
+              Insufficient credits
+            </p>
+            <label for="bid-amount" aria-label="Amount">Amount</label>
+            <input
+              type="number"
+              class="block bg-white bg-opacity-20 p-4 w-full ps-10 text-sm text-white active:border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500"
+              id="bid-amount"
+              min="0"
+              required
+            />
+          </div>
+          <button
+            class="bg-white bg-opacity-20 py-2 px-4 mx-auto rounded-lg mt-8 hover:bg-primary-400 hover:text-black transition disabled:bg-white disabled:bg-opacity-20 disabled:text-white"
+            type="submit"
+            role="button"
+            aria-label="Submit Bid"
+            id="submit-bid"
+          >
+            Submit Bid
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

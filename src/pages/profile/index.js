@@ -7,13 +7,15 @@ import { loginButton } from "../../js/components/navBar.js";
 import { toggleNav } from "../../js/listeners/toggleNav.js";
 import { updateAvatar } from "../../js/api/updateAvatar.js";
 import { createListing } from "../../js/api/createListing.js";
+import { getUserListings } from "../../js/api/getUserListings.js";
+import { checkDeadlineStatus } from "../../js/utils/checkDeadlineStatus.js";
 async function main() {
   const usernameElement = document.getElementById("username");
   const emailElement = document.getElementById("email");
   const creditsElement = document.getElementById("credits");
   const avatarElement = document.getElementById("avatar");
   const navButton = document.getElementById("nav-button");
-  const listingsContainer = document.getElementById("listings-container");
+
   const openAvatarModal = document.getElementById("open-avatar-modal");
 
   try {
@@ -39,6 +41,10 @@ async function main() {
     const userData = JSON.parse(getItem("user"));
     const { name, accessToken } = userData;
     const user = await getUser(name, accessToken);
+    const userListings = await getUserListings(name, accessToken);
+
+    // Rendering listings details
+    renderListingDetails(userListings);
 
     avatarElement.src =
       user.avatar === ""
@@ -54,6 +60,86 @@ async function main() {
 }
 
 main();
+
+function renderListingDetails(listingsArray) {
+  console.log(listingsArray);
+  const listingsContainer = document.getElementById("listings-container");
+  if (listingsArray.length === 0) {
+    const listMessage = document.createElement("p");
+    listMessage.classList.add(
+      "font-mono",
+      "font-thin",
+      "italic",
+      "sm:text-center",
+    );
+    listMessage.textContent =
+      "You have no listings. Create a New Listing and join the auction.";
+    listingsContainer.append(listMessage);
+  } else {
+    // List Header
+
+    const listHeader = document.createElement("ul");
+    listHeader.classList.add(
+      "grid",
+      "grid-cols-3",
+      "place-items-center",
+      "border-b",
+      "pb-2",
+    );
+    const categoryCount = 3;
+    for (let i = 1; i <= categoryCount; i++) {
+      const headerCategory = document.createElement("li");
+      headerCategory.classList.add("font-mono", "sm:font-bold", "text-sm");
+      if (i === 1) {
+        headerCategory.textContent = "Created";
+      }
+      if (i === 2) {
+        headerCategory.textContent = "Status";
+      }
+      if (i === 3) {
+        headerCategory.textContent = "Bids";
+      }
+      listHeader.append(headerCategory);
+    }
+    listingsContainer.append(listHeader);
+    // List Rows
+    listingsArray.forEach((listing) => {
+      const listingRow = document.createElement("ul");
+      listingRow.classList.add(
+        "grid",
+        "grid-cols-3",
+        "place-items-center",
+        "border-b",
+        "py-2",
+        "hover:cursor-pointer",
+        "hover:scale-[101%]",
+        "hover:bg-white",
+        "hover:bg-opacity-5",
+        "transition",
+      );
+      listingRow.addEventListener("click", () => {
+        document.location.href = `../listingsItem/listingsItem.html?id=${listing.id}`;
+      });
+      const listingDetailsCount = 3;
+      for (let i = 1; i <= listingDetailsCount; i++) {
+        const listingDetail = document.createElement("li");
+        listingDetail.classList.add("font-mono", "font-thin", "text-sm");
+        if (i === 1) {
+          listingDetail.textContent = formatDate(listing.created);
+        }
+        if (i === 2) {
+          listingDetail.textContent = checkDeadlineStatus(listing.endsAt);
+        }
+        if (i === 3) {
+          listingDetail.textContent = listing._count.bids;
+        }
+        listingRow.append(listingDetail);
+      }
+
+      listingsContainer.append(listingRow);
+    });
+  }
+}
 
 // function listingsDetails(listings) {
 //   console.log(listings);

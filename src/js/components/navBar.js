@@ -44,10 +44,12 @@ export function loginButton() {
       const navMenu = document.getElementById("nav-menu");
       navMenu.classList.remove("flex");
       navMenu.classList.add("hidden");
-      const registerModal = document.getElementById("register-modal");
-      if (registerModal.classList.contains("flex")) {
-        registerModal.classList.remove("flex");
-        registerModal.classList.add("hidden");
+      if (document.getElementById("register-modal")) {
+        const registerModal = document.getElementById("register-modal");
+        if (registerModal.classList.contains("flex")) {
+          registerModal.classList.remove("flex");
+          registerModal.classList.add("hidden");
+        }
       }
     });
   } else {

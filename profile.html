@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/dist/output.css" />
-    <script src="./index.js" defer type="module"></script>
+    <script src="./src/pages/profile/index.js" defer type="module"></script>
     <title>The Auction House | Listings</title>
   </head>
   <body class="flex flex-col min-h-screen gradient-background text-white">
@@ -31,7 +31,7 @@
               d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
             />
           </svg>
-          <a href="../../../index.html" class="hover:text-green-300 transition">
+          <a href="./index.html" class="hover:text-green-300 transition">
             <h1>the<span class="font-extrabold"> Auction House</span></h1>
           </a>
         </div>
@@ -66,7 +66,7 @@
               class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
             >
               <a
-                href="../../../index.html"
+                href="./index.html"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -90,7 +90,7 @@
               class="me-4 pl-6 group border-b hover:text-cyan-400 w-full md:p-2 md:border-none md:w-auto md:hover:bg-transparent"
             >
               <a
-                href="../listings/listings.html"
+                href="./listings.html"
                 class="hover:text-cyan-300 transition flex items-center py-6 md:py-2"
               >
                 <svg
@@ -190,26 +190,7 @@
           New Listing
         </button>
         <!-- <p class="text-xl font-light tracking-widest">Your Listings</p> -->
-        <div class="grid grid-cols-1 mt-10" id="listings-container">
-          <ul class="grid grid-cols-4 place-items-center border-b pb-2">
-            <li class="font-mono sm:font-bold text-sm sm:text-sm">Created</li>
-            <li class="font-mono sm:font-bold text-sm sm:text-sm">Status</li>
-            <li class="font-mono sm:font-bold text-sm sm:text-sm">Bids</li>
-            <li class="font-mono sm:font-bold text-sm sm:text-sm">Top Bid</li>
-          </ul>
-          <ul class="grid grid-cols-4 place-items-center border-b py-2">
-            <li class="font-mono font-thin text-sm sm:text-sm">Mar 23 2023</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">Ended</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">12</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">USD 130</li>
-          </ul>
-          <ul class="grid grid-cols-4 place-items-center border-b py-2">
-            <li class="font-mono font-thin text-sm sm:text-sm">Nov 12 2023</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">Active</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">2</li>
-            <li class="font-mono font-thin text-sm sm:text-sm">USD 15</li>
-          </ul>
-        </div>
+        <div class="grid grid-cols-1 mt-10" id="listings-container"></div>
       </section>
     </main>
     <footer class="mt-auto px-2 bg-black bg-opacity-60">

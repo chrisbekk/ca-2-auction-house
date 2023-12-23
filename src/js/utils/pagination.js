@@ -97,12 +97,6 @@ export function paginate(page, itemsPerPage, allData) {
   for (let i = startIndex; i < endIndex && i < allData.length; i++) {
     contentContainer.innerHTML += listingsCard(allData[i]);
     const listingsItems = document.querySelectorAll(".listings-item");
-
-    listingsItems.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        goToListing(e.currentTarget);
-      });
-    });
   }
 
   generatePaginationButtons(

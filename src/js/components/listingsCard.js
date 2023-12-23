@@ -7,7 +7,7 @@ export function listingsCard(listing) {
     media.length !== 0
       ? media[0]
       : "../../../public/assets/jk-placeholder-image.jpg";
-  const latestPrice = bids.length !== 0 ? bids[bids.length - 1].amount : 0;
+  const latestPrice = sortBids(bids);
   const daysLeft = getDaysLeft(endsAt);
   let bgColorDays = "";
   if (daysLeft < 3) {
@@ -58,21 +58,10 @@ export function listingsCard(listing) {
   return card;
 }
 
-{
-  /* <div id=${id} class="flex h-52 w-full md:flex-col md:h-80 md:w-64 bg-white bg-opacity-20 rounded-lg shadow-lg hover:shadow-primary-800 hover:shadow-lg hover:cursor-pointer transition">
-<div class="aspect-auto h-full w-2/5 mr-3 md:aspect-square md:h-1/2 md:w-full">
-  <img src=${listingsImage} alt=${title} class="w-full h-full rounded-l-lg md:rounded-bl-none md:rounded-t-lg"/>
-</div>
-<div class="p-2">
-  <p class="text-sm font-thin">Ends in: <span class="font-normal ml-1">${daysLeft} ${
-    daysLeft === 1 ? "day" : "days"
-  }</span>
-  </p>
-  <p class="sm:text-xl font-thin tracking-wider mt-4 md:mt-2 max-w-[190px] truncate">${title}</p>
-  <p class="font-thin mt-4 md:mt-2">USD <span class="font-normal">${latestPrice}</span></p>
-  <div class="flex mt-8 md:mt-1">
-    ${tagsHTML}
-  </div>
-</div>
-</div> */
+function sortBids(bids) {
+  if (bids.length === 0) {
+    return 0;
+  }
+  const sortedBids = [...bids].sort((a, b) => b.amount - a.amount);
+  return sortedBids[0].amount;
 }

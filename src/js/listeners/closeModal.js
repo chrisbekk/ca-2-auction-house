@@ -5,6 +5,9 @@ export function closeModal(selector) {
     input.classList.add("border-grey-300");
   });
   document.getElementById(selector).classList.add("hidden");
-  document.getElementById("error-messages").innerHTML = "";
+  if (document.getElementById("error-messages")) {
+    document.getElementById("error-messages").innerHTML = "";
+  }
+
   document.querySelectorAll("form").forEach((f) => f.reset());
 }
