@@ -48,7 +48,7 @@ async function main() {
 
     avatarElement.src =
       user.avatar === ""
-        ? "../../../public/assets/profile-placeholder.jpg"
+        ? "public/assets/profile-placeholder.jpg"
         : user.avatar;
     usernameElement.textContent = user.name;
     emailElement.textContent = user.email;
@@ -118,7 +118,7 @@ function renderListingDetails(listingsArray) {
         "transition",
       );
       listingRow.addEventListener("click", () => {
-        document.location.href = `../listingsItem/listingsItem.html?id=${listing.id}`;
+        document.location.href = `./listingsItem.html?id=${listing.id}`;
       });
       const listingDetailsCount = 3;
       for (let i = 1; i <= listingDetailsCount; i++) {
@@ -140,30 +140,6 @@ function renderListingDetails(listingsArray) {
     });
   }
 }
-
-// function listingsDetails(listings) {
-//   console.log(listings);
-//   if (listings.length === 0) {
-//     console.log("No Listings");
-//   } else {
-//     listings.forEach((listing) => {
-//       const list = document.createElement("ul");
-//       list.innerHTML = `
-//         <li class="font-mono font-thin text-sm sm:text-sm">
-//             ${formatDate(listing.created)}
-//         </li>
-//         <li class="font-mono font-thin text-sm sm:text-sm">
-//             Ended
-//         </li>
-//         <li class="font-mono font-thin text-sm sm:text-sm">
-//             ${listing[_count].bids}
-//         </li>
-//         <li class="font-mono font-thin text-sm sm:text-sm">
-//             USD 130
-//         </li>`;
-//     });
-//   }
-// }
 
 async function submitAvatar() {
   let avatarURL = document.getElementById("user-avatar").value;

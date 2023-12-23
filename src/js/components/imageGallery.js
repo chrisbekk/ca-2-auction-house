@@ -10,7 +10,9 @@ export function imageGallery(media, title) {
 
   const image = document.getElementById("primary-image");
   const mediaGrid = document.getElementById("media-grid");
-  image.src = media;
+  console.log(media);
+  image.src =
+    media.length === 0 ? "public/assets/jk-placeholder-image.jpg" : media[1];
   image.alt = title;
   if (media.length <= 2) {
     mediaGrid.classList.add("hidden");
