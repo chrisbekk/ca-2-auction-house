@@ -4,6 +4,6 @@ export function searchListings() {
   if (search.value.trim() === "") {
     return;
   } else {
-    window.location.href = `src/pages/listings/listings.html?search=${search.value}`;
+    window.location.href = `./listings.html?search=${search.value}`;
   }
 }

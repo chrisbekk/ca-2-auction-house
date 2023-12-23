@@ -1,6 +1,5 @@
 export function toggleNav() {
   const navMenu = document.getElementById("nav-menu");
-  console.log("click");
   if (navMenu.classList.contains("hidden")) {
     navMenu.classList.remove("hidden");
   } else {

@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap'); */
 @media (min-width: 768px) {
   .three-d {
     transform: perspective(5000px) rotateY(var(--rotateX))
@@ -17,4 +17,8 @@
 
 [data-status="true"] {
   display: block;
+}
+
+.gradient-background {
+  background: linear-gradient(168deg, #24262b 43.83%, #bc9382 100%);
 }

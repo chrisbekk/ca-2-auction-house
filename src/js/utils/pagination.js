@@ -22,18 +22,18 @@ export function generatePaginationButtons(
       "px-4",
       "mr-2",
       "rounded-md",
-      "border",
       "hover:cursor-pointer",
     );
 
     // Highlight the button of the current page
     if (i === currentPage) {
-      button.classList.add("bg-white", "text-black");
+      button.classList.add("bg-primary-400", "text-black");
     } else {
       button.classList.add(
-        "bg-transparent",
+        "bg-white",
+        "bg-opacity-20",
         "text-white",
-        "hover:bg-white",
+        "hover:bg-primary-400",
         "hover:text-black",
       );
     }
@@ -53,7 +53,7 @@ export function generatePaginationButtons(
       "py-2",
       "px-4",
       "mr-2",
-      "hover:bg-white",
+      "hover:bg-primary-400",
       "hover:text-black",
       "rounded",
     );
@@ -74,7 +74,7 @@ export function generatePaginationButtons(
       "py-2",
       "px-4",
       "mr-2",
-      "hover:bg-white",
+      "hover:bg-primary-400",
       "hover:text-black",
       "rounded",
     );
@@ -97,12 +97,6 @@ export function paginate(page, itemsPerPage, allData) {
   for (let i = startIndex; i < endIndex && i < allData.length; i++) {
     contentContainer.innerHTML += listingsCard(allData[i]);
     const listingsItems = document.querySelectorAll(".listings-item");
-
-    listingsItems.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        goToListing(e.currentTarget);
-      });
-    });
   }
 
   generatePaginationButtons(
