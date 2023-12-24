@@ -12,7 +12,7 @@ export function imageGallery(media, title) {
   const mediaGrid = document.getElementById("media-grid");
   console.log(media);
   image.src =
-    media.length === 0 ? "public/assets/jk-placeholder-image.jpg" : media[0];
+    media.length === 0 ? "public/assets/image-placeholder.jpg" : media[0];
   image.alt = title;
   if (media.length <= 2) {
     mediaGrid.classList.add("hidden");

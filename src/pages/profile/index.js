@@ -17,8 +17,9 @@ async function main() {
   const navButton = document.getElementById("nav-button");
 
   const openAvatarModal = document.getElementById("open-avatar-modal");
-
+  const loadingSpinner = document.getElementById("loading-spinner");
   try {
+    loadingSpinner.classList.add("hidden");
     navButton.addEventListener("click", toggleNav);
     openAvatarModal.addEventListener("click", () => {
       const avatarModal = document.getElementById("avatar-modal");

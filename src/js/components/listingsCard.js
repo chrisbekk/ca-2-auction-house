@@ -6,7 +6,7 @@ export function listingsCard(listing) {
   const listingsImage =
     media.length !== 0
       ? media[0]
-      : "../../../public/assets/jk-placeholder-image.jpg";
+      : "../../../public/assets/image-placeholder.jpg";
   const latestPrice = sortBids(bids);
   const daysLeft = getDaysLeft(endsAt);
   let bgColorDays = "";

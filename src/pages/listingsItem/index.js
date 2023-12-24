@@ -12,6 +12,8 @@ const navButton = document.getElementById("nav-button");
 navButton.addEventListener("click", toggleNav);
 async function main() {
   try {
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.add("hidden");
     const listingsID = queryParam("id");
     const { accessToken, name } = JSON.parse(getItem("user"));
     const listing = await getSingleListing(listingsID);
