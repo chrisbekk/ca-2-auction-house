@@ -12,7 +12,7 @@ export async function postBid(accessToken, amount, listingsID) {
   };
   try {
     const response = await fetch(
-      `${BASE_URL}/listings/${listingsID}/bidss`,
+      `${BASE_URL}/listings/${listingsID}/bids`,
       options,
     );
     if (!response.ok) {

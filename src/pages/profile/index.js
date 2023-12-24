@@ -266,7 +266,9 @@ submitListingButton.addEventListener("click", async () => {
     };
     const user = JSON.parse(getItem("user"));
 
-    const response = await createListing(user, createdListing);
+    await createListing(user, createdListing);
+
+    window.location.reload();
   } catch (error) {
     if (error.message === "Empty date string.") {
       dateErrorMessage.textContent = "Please set an end date for your auction.";
