@@ -12,15 +12,23 @@ const navButton = document.getElementById("nav-button");
 navButton.addEventListener("click", toggleNav);
 async function main() {
   try {
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.add("hidden");
     const listingsID = queryParam("id");
     const { accessToken, name } = JSON.parse(getItem("user"));
     const listing = await getSingleListing(listingsID);
-
+    console.log(listing.seller.name);
+    console.log(name);
     const { bids, description, endsAt, seller, tags, media, title } = listing;
     imageGallery(media, title);
     listingDetails(bids, description, endsAt, seller, tags, title);
     bidsDetailsList(bids);
-    bidOnListing(name, bids, accessToken, listingsID);
+    if (listing.seller.name === name) {
+      const bidContainer = document.getElementById("bid-button-container");
+      bidContainer.classList.add("hidden");
+    } else {
+      bidOnListing(name, bids, accessToken, listingsID);
+    }
   } catch (error) {
     console.log(error);
   }
